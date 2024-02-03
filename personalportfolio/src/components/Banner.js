@@ -1,6 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
-import BodyImage from "../assets/images/bodyimg1.png";
+import BodyImage from "../assets/images/bodyimg2.png";
 import { useState, useEffect } from "react";
 
 const Banner = () => {
