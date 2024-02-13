@@ -3,6 +3,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useState, useEffect } from 'react';
 import icon1 from '../assets/images/linkedinlogo.svg';
+import icon2 from '../assets/images/git.png';
 
 const NavigationBar = () => {
     const [activeLink, setActiveLink] = useState('home');
@@ -39,7 +40,10 @@ const NavigationBar = () => {
                     <span className="navbar-text">
                         <div className="social-icon">
                             <a href="https://www.linkedin.com/in/krishnasai1310/">
-                                <img src={icon1} alt="" />
+                                <img src={icon1} alt="linkedin" />
+                            </a>
+                            <a href="https://www.linkedin.com/in/krishnasai1310/">
+                                <img src={icon2} alt="github" className="w-full h-full" />
                             </a>
                         </div>
                         <button className='vvd' onClick={() => console.log('Contact Us Form')}>

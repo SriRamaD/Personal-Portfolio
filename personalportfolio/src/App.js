@@ -3,6 +3,7 @@ import './components/NavigationBar'
 import NavigationBar from './components/NavigationBar';
 import Banner from './components/Banner';
 import Skills from './components/Skills';
+import Experience from './components/Experience';
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
       <NavigationBar />
       <Banner />
       <Skills />
+      <Experience />
     </div>
   );
 }
