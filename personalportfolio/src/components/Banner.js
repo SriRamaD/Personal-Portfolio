@@ -1,15 +1,20 @@
 import { Col, Container, Row } from "react-bootstrap";
 import {ArrowRightCircle} from "react-bootstrap-icons";
-import BodyImage from "../assets/images/bodyimg2.png";
+import Image1 from "../assets/images/Hi1.png";
+import Image2 from "../assets/images/Hi3.png";
+import Image3 from "../assets/images/Hi4.png";
 import { useState, useEffect } from "react";
 
 const Banner = () => {
     const [loopNum, setLoopNum] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
-    const toRotate = ["Full Stack Developer", "Software Engineer", "Frontend Engineer", "Backend Engineer"];
+    const toRotate = ["Full Stack Developer", "Software Engineer", "Frontend Developer", "Backend Developer"];
     const [text, setText] = useState('');
     const [delta, setDelta] = useState(300 - Math.random() * 100)
     const period = 200;
+
+    const images = [Image1, Image2, Image3];
+    const [currentImage, setCurrentImage] = useState(0);
 
     useEffect(() => {
         const ticker = setInterval(() => {
@@ -18,6 +23,14 @@ const Banner = () => {
 
         return () => { clearInterval(ticker) };
     }, [text])
+
+    useEffect(() => {
+        const intervalId = setInterval(() => {
+            setCurrentImage((prevIndex) => (prevIndex + 1) % images.length); // Cycle through the images
+        }, 1000); // Change image every 3 seconds
+
+        return () => clearInterval(intervalId); // Clean up on component unmount
+    }, []);
 
     const tick = () => {
         let i=loopNum%toRotate.length;
@@ -56,7 +69,7 @@ const Banner = () => {
                         <button onClick={() => console.log('Contact me form')}>Let's Connect <ArrowRightCircle size={25}/></button>
                     </Col>
                     <Col xs={12} md={6} xl={5}>
-                        <img src={BodyImage} alt="" />
+                        <img src={images[currentImage]} alt="" />
                     </Col>
                 </Row>
             </Container>
